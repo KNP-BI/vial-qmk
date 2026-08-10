@@ -4,3 +4,5 @@
 *.hex
 *.tmp
 obj_*/
+__pycache__/
+*.pyc
