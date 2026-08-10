@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "notes": "Kim's Cheapino keymap - Workman, home-row mods, converted from live Vial config",
+  "documentation": "This file is a QMK Configurator export. Move it to keyboards/cheapino/keymaps/kim/keymap.json and build with: qmk flash -kb cheapino -km kim",
+  "keyboard": "cheapino",
+  "keymap": "kim",
+  "layout": "LAYOUT_split_3x5_3",
+  "layers": [
+    [
+      "KC_Q", "KC_D", "KC_R", "KC_W", "KC_B",
+      "KC_J", "KC_F", "KC_U", "KC_P", "KC_QUOTE",
+      "LGUI_T(KC_A)", "LALT_T(KC_S)", "LCTL_T(KC_H)", "LSFT_T(KC_T)", "KC_G",
+      "KC_Y", "RSFT_T(KC_N)", "RCTL_T(KC_E)", "RALT_T(KC_O)", "RGUI_T(KC_I)",
+      "KC_Z", "KC_X", "KC_M", "KC_C", "KC_V",
+      "KC_K", "KC_L", "KC_COMMA", "KC_DOT", "KC_SLASH",
+      "LT(1,KC_ESCAPE)", "KC_SPACE", "LT(2,KC_TAB)",
+      "LT(3,KC_DELETE)", "KC_BSPC", "KC_ENTER"
+    ],
+    [
+      "KC_KP_ASTERISK", "KC_KP_PLUS", "KC_UP", "KC_KP_MINUS", "KC_KP_SLASH",
+      "KC_HOME", "KC_7", "KC_8", "KC_9", "TD(0)",
+      "KC_LGUI", "KC_LEFT", "KC_DOWN", "KC_RIGHT", "KC_KP_DOT",
+      "KC_END", "KC_4", "KC_5", "KC_6", "TD(1)",
+      "TO(0)", "TG(1)", "TO(2)", "TO(3)", "LSFT(KC_MINUS)",
+      "KC_0", "KC_1", "KC_2", "KC_3", "TD(2)",
+      "KC_TRNS", "KC_TRNS", "KC_TRNS",
+      "KC_TRNS", "KC_TRNS", "KC_TRNS"
+    ],
+    [
+      "KC_EXLM", "KC_AT", "KC_HASH", "KC_DLR", "KC_EQUAL",
+      "KC_F9", "KC_F10", "KC_F11", "KC_F12", "KC_PSCR",
+      "KC_CIRC", "KC_AMPR", "KC_ASTR", "LSFT(KC_MINUS)", "LSFT(KC_EQUAL)",
+      "KC_F5", "KC_F6", "KC_F7", "KC_F8", "KC_PGUP",
+      "LSFT(KC_BSLS)", "KC_PERC", "KC_BSLS", "KC_GRAVE", "KC_MINUS",
+      "KC_F1", "KC_F2", "KC_F3", "KC_F4", "KC_PGDN",
+      "KC_TRNS", "KC_TRNS", "KC_TRNS",
+      "KC_TRNS", "KC_TRNS", "KC_TRNS"
+    ],
+    [
+      "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO",
+      "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO",
+      "TO(0)", "KC_NO", "UG_VALU", "KC_NO", "BL_ON",
+      "BL_TOGG", "KC_NO", "KC_NO", "UG_TOGG", "KC_NO",
+      "TO(0)", "KC_NO", "UG_VALD", "KC_NO", "RGB_M_P",
+      "RM_ON", "RGB_M_R", "KC_NO", "KC_NO", "KC_NO",
+      "KC_TRNS", "KC_TRNS", "KC_TRNS",
+      "KC_TRNS", "KC_TRNS", "KC_TRNS"
+    ]
+  ],
+  "author": "kim"
+}
