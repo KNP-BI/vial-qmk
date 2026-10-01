@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #undef DYNAMIC_KEYMAP_LAYER_COUNT
 #define DYNAMIC_KEYMAP_LAYER_COUNT 4
-#define TAPPING_TERM 180
+#define TAPPING_TERM 200
 
 //#define USE_MATRIX_I2C
 #ifdef KEYBOARD_crkbd_rev1_legacy
@@ -39,17 +39,29 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define EE_HANDS
 
 #define USE_SERIAL_PD2
-#ifdef RGBLIGHT_ENABLE
-#    undef RGBLIGHT_LED_COUNT
-#    define RGBLIGHT_ANIMATIONS
-#    define RGBLIGHT_LED_COUNT 54
-#    undef RGBLED_SPLIT
-#    define RGBLED_SPLIT \
-        { 27, 27 }
-#    define RGBLIGHT_LIMIT_VAL 120
-#    define RGBLIGHT_HUE_STEP  10
-#    define RGBLIGHT_SAT_STEP  17
-#    define RGBLIGHT_VAL_STEP  17
+
+#ifdef RGB_MATRIX_ENABLE
+#   define RGB_MATRIX_SLEEP
+
+#   undef RGB_MATRIX_MAXIMUM_BRIGHTNESS
+#   define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
+
+#   undef RGB_MATRIX_HUE_STEP
+#   define RGB_MATRIX_HUE_STEP 8
+
+#   undef RGB_MATRIX_SAT_STEP
+#   define RGB_MATRIX_SAT_STEP 8
+
+#   undef RGB_MATRIX_VAL_STEP
+#   define RGB_MATRIX_VAL_STEP 8
+
+#   undef RGB_MATRIX_SPD_STEP
+#   define RGB_MATRIX_SPD_STEP 10
+
+// Non-reactive effects only — no keypress tracking overhead
+#   define ENABLE_RGB_MATRIX_BREATHING
+#   define ENABLE_RGB_MATRIX_CYCLE_ALL
+#   define ENABLE_RGB_MATRIX_ALPHAS_MODS
 #endif
 
 #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"

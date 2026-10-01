@@ -118,16 +118,25 @@ const char code_to_name[60] = {
 
 void set_keylog(uint16_t keycode, keyrecord_t *record) {
   char name = ' ';
-    if ((keycode >= QK_MOD_TAP && keycode <= QK_MOD_TAP_MAX) ||
-        (keycode >= QK_LAYER_TAP && keycode <= QK_LAYER_TAP_MAX)) { keycode = keycode & 0xFF; }
+  if ((keycode >= QK_MOD_TAP && keycode <= QK_MOD_TAP_MAX) ||
+      (keycode >= QK_LAYER_TAP && keycode <= QK_LAYER_TAP_MAX)) { keycode = keycode & 0xFF; }
   if (keycode < 60) {
     name = code_to_name[keycode];
   }
 
-  // update keylog
-  snprintf(keylog_str, sizeof(keylog_str), "%dx%d, k%2d : %c",
-           record->event.key.row, record->event.key.col,
-           keycode, name);
+  keylog_str[0]  = '0' + record->event.key.row;
+  keylog_str[1]  = 'x';
+  keylog_str[2]  = '0' + record->event.key.col;
+  keylog_str[3]  = ',';
+  keylog_str[4]  = ' ';
+  keylog_str[5]  = 'k';
+  keylog_str[6]  = '0' + (keycode / 10) % 10;
+  keylog_str[7]  = '0' + keycode % 10;
+  keylog_str[8]  = ' ';
+  keylog_str[9]  = ':';
+  keylog_str[10] = ' ';
+  keylog_str[11] = name;
+  keylog_str[12] = '\0';
 }
 
 void oled_render_keylog(void) {
